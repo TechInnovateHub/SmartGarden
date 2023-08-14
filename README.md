@@ -2,6 +2,10 @@
 
 SmartGarden is an open-source project that aims to revolutionize plant irrigation by providing an intelligent and efficient solution for automating watering processes. With a focus on user-friendliness, customization, and water conservation, SmartGarden takes the guesswork out of gardening and promotes healthier plant growth.
 
+<img src="img/Automatic Irrigation System Layout.jpg" alt="SmartGarden flowChart" width="50%">
+
+
+
 ## Key Features
 
 - **Automated Watering:** SmartGarden leverages sensor data, weather forecasts, and soil moisture levels to autonomously determine optimal watering schedules, ensuring plants receive the right amount of water.
