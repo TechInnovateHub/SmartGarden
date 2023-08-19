@@ -4,7 +4,11 @@
 #define TEST_PROTOTYPE
 
 const int pumpRelayPin {D2};
+const int solenoidPin {D4};
 const int soilMoisturePin {A0};
+const int flowSensorPin {A0};
+const int led {D3};
+
 const int tooWetSoil{500};
 const int tooDrySoil{300};
 
@@ -14,11 +18,17 @@ void notWaterPlant(int, int);
 
 void setup() {
   pinMode(pumpRelayPin, OUTPUT);
+  pinMode(solenoidPin, OUTPUT);
+  pinMode(led, OUTPUT);
+
+  #ifdef TEST_PROTOTYPE
   Serial.begin(9600);
+  #endif
 }
 
 void loop() {
   int soilMoistureValue {analogRead(soilMoisturePin)};
+
   #ifdef TEST_PROTOTYPE
   Serial.print("Soil Moisture: ");
   Serial.println(soilMoistureValue);
@@ -52,6 +62,8 @@ void waterPlant(int soilMoistureValue, int tooWetSoil)
   Serial.println("Too dry, water");
   #endif
   digitalWrite(pumpRelayPin, HIGH);
+  digitalWrite(solenoidPin, HIGH);
+  digitalWrite(led, HIGH);
 }
 
 void notWaterPlant(int soilMoistureValue, int tooWetSoil)
@@ -61,4 +73,6 @@ void notWaterPlant(int soilMoistureValue, int tooWetSoil)
   Serial.println("Too wet, don't water");
   #endif
   digitalWrite(pumpRelayPin, LOW);
+  digitalWrite(solenoidPin, LOW);
+  digitalWrite(led, LOW);
 }

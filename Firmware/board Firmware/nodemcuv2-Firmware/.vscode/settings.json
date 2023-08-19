@@ -1,0 +1,10 @@
+{
+    "cmake.configureOnOpen": true,
+    "cSpell.words": [
+        "Blynk",
+        "Instructables",
+        "microcontroller",
+        "Nodemcu",
+        "RFID"
+    ]
+}
