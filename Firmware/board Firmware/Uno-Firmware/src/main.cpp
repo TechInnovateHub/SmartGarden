@@ -39,11 +39,7 @@ void setup() {
   lcd.print("Hello, There!");
   lcd.setCursor(0,1);
   lcd.print("LOADING!");
-  //  lcd.setCursor(0,2);
-  // lcd.print("Arduino LCM IIC 2004");
-  //  lcd.setCursor(0,3);
-  // lcd.print("Power By Manasseh!");
-
+  
   pinMode(pumpRelayPin, OUTPUT);
   pinMode(solenoidPin, OUTPUT);
   pinMode(led, OUTPUT);
@@ -65,6 +61,10 @@ void loop() {
   Serial.print("Soil Moisture: ");
   Serial.println(soilMoistureValue);
   #endif
+
+  lcd.setCursor(0,1);
+  lcd.print("Soil Moist:  ");
+  lcd.println(soilMoistureValue);
 
   if (soilMoistureValue > tooWetSoil) 
   {
